@@ -2,6 +2,7 @@ package EjerciciosThreads.Ejecicio1;
 
 public class Main {
     public static void main(String[] args){
+
 // Declaración de 2 threads
         PingPong t1 =new PingPong("PING",33);
         PingPong t2= new PingPong("PONG",10);
