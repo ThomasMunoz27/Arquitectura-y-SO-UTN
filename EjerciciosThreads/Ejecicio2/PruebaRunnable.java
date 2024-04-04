@@ -14,5 +14,11 @@ public class PruebaRunnable {
 // Se activan los threads
         t1.start();
         t2.start();
+        try {
+            Thread.sleep(500);
+            t1.stop();
+            t2.stop();
+        }catch (Exception E) {}
+
     }
 }
