@@ -9,11 +9,16 @@ public class Main {
         Filosofo f4 = new Filosofo(4);
         Filosofo f5 = new Filosofo(5);
 
-        f1.start();
+
         f2.start();
-        f3.start();
         f4.start();
+        f1.start();
         f5.start();
+        f3.start();
+
+
+
+
 
     }
 }
