@@ -12,9 +12,9 @@ public class Productor extends Thread {
         cola.put(i); //pone el número
         System.out.println(i+"=>Productor : " + n
                 + ", produce: " + i);
-       /* try {
+        try {
             sleep (100) ;
-        } catch (InterruptedException e) { }*/
+        } catch (InterruptedException e) { }
     }
 }
 }
