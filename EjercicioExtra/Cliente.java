@@ -63,7 +63,7 @@ public class Cliente extends Thread{
             if (cajas[0].isWorking() && cajas[1].isWorking()){
                 System.out.println("El cliente: " + this.idCliente + " está esperando en la fila, para pagar");
                 try {
-                    wait();
+                    fila.acquire();
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -71,13 +71,13 @@ public class Cliente extends Thread{
             if(cajas[0].isWorking() == false){
                 System.out.println("El cliente: " + this.idCliente + " está siendo atendido en la caja 1");
                 cajas[0].atendiendo(this.cantProductos);
-
+                fila.release();
 
             } else if (cajas[1].isWorking() == false) {
                 System.out.println("El cliente: " + this.idCliente + " está siendo atendido en la caja 2");
                 cajas[1].atendiendo(this.cantProductos);
 
-                notify();
+                fila.release();
             }
         System.out.println("El cliente " + this.idCliente + " se fue del supermercado");
 

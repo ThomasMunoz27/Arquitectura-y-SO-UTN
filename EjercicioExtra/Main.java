@@ -10,12 +10,13 @@ public class Main {
         Cliente c4 = new Cliente(6);
         c1.start();
         c4.start();
+        /*
         try {
             c1.join();
             c4.join();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
-        }
+        }*/
         c3.start();
         c2.start();
 
